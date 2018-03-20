@@ -1,2 +1,0 @@
-# OT
-This is OT
