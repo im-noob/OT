@@ -328,3 +328,199 @@ hr{
 
 
 
+/* home welcome.css by amritesh */
+
+/******************* overlay *************************/
+.bg-overlay {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("../image/bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    height: 450px;
+    padding-top: 50px;
+}
+
+/******************* Social buttons ******************/
+.social:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
+ .social {
+     -webkit-transform: scale(0.8);
+     /* Browser Variations: */
+     
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+ }
+
+ #social-fb:hover {
+    background: white;
+     color: #3B5998;
+ }
+ #social-tw:hover {
+    color: white;
+     background: #4099FF;
+ }
+ #social-gp:hover {
+  color: white;
+    background-color: #d34836;
+
+ }
+ #social-em:hover {
+  color: white;
+     background: : #f39c12;
+ }
+ #social-fb{
+  color: white;
+    background: #3B5998;
+ }
+ #social-tw{
+     color: #4099FF;
+ }
+ #social-gp{
+     color: #d34836;
+ }
+ #social-em{
+     color: #f39c12;
+ }
+ .social-button{
+  color: white;
+ }
+ /* student love us */
+ .studentLove{
+      text-align: center;
+      font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+      font-size: 25px;
+      font-weight: bold;
+ }
+ /* auto bio graphy */
+ .course-testimonials {
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    min-height: 550px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: url(../image/section-4-BG.jpg);
+ }
+ .auto-title{
+      background: 
+      font-family: 'Proxima Nova Soft','Helvetica Neue',sans-serif;
+ }
+ #auto-div{
+  height: 300px;
+  width: 100%;
+ }
+ .bg-blue{
+  background: blue;
+ }
+ .avtar-dp{
+  border-radius: 50%;
+ }
+ /* button login sign up */
+ .bold{
+  font-weight: 900;
+ }
+ /* why to choose us */
+ #whyus{
+    color: #1eb0bc;
+    font-size: 44px;
+    font-family: 'open_sanslight';
+    line-height: 70px;
+ }
+ .fa-sun{
+  color: red;
+ }
+ /* button group filter*/
+ .b-group{
+  background-color: red;
+  background-image: url(../image/bg_mobile_img.jpg) ;
+ }
+ .port-image
+{
+    width: 100%;
+}
+
+.col-md-3
+{
+    margin-bottom:20px;
+}
+
+.each-item
+{
+    position:relative;
+    overflow:hidden;
+}
+
+.each-item:hover .cap2, .each-item:hover .cap1
+{
+    left:0px;
+}
+
+.cap1
+{
+    position:absolute;
+    width:100%;
+    height:70%;
+    background: rgba(12, 12, 12, 0.48);
+    top:0px;
+    left:-100%;
+    padding:10px;
+    color: white;
+    transition: all .5s;
+}
+
+.cap2
+{
+    position:absolute;
+    width:100%;
+    height:30%;
+    background:rgba(175, 13, 101, 0.34);;
+    bottom:0px;
+    left:100%;
+    padding:10px;
+    font-weight: 900;
+    color: white;
+    transition: all .5s;
+}
+/* filter photo */
+.filter .each-item{
+  text-align: center;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+
+
+
+
+
+.nav-link{
+  color: white;
+  font-weight: 900;
+    text-shadow: 2px 2px 12px black, 0 0 25px blue, 0 0 5px darkblue;
+
+}
+.navbar-toggler-icon{
+  border: 20px;
+  color: white;
+}
+.navbar-toggler{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card{
+  box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+.btn{
+  box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}

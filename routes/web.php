@@ -1,6 +1,22 @@
 <?php
 
+
+/*
+|--------------------------------------------------------------------------
+| Including web Routes
+|--------------------------------------------------------------------------
+|
+| Here is the list of all route that are required to start the app. If the
+| any of the given route is missing apllication will not run until route
+| is put into the "routes" directory.
+|
+*/
+
+
+include_once(__DIR__.'/homeRoute.php');
 include_once(__DIR__."/super.php");
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,9 +28,7 @@ include_once(__DIR__."/super.php");
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/Test/Welcome', function () {
     return view('Test.Home');
@@ -23,3 +37,7 @@ Route::get('/Test/Welcome', function () {
 Route::get('/Test/Welcome', function () {
     return view('Test.Home');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

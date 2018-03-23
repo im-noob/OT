@@ -1,22 +1,16 @@
 $(function(){
-
-			$('#myFunction').click(function(){
-				    // var x = document.getElementById("myTopnav");
-				    var x = $('#myTopnav');
-				    if (x.className === "topnav") {
-				        x.className += " responsive";
-				    } else {
-				        x.className = "topnav";
-				    }
-				});
-	});
-
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
+	/* button group filter */
+    $(".filter-button").click(function(){
+        var value = $(this).attr('data-filter');
+        
+        if(value == "all"){
+            //$('.filter').removeClass('hidden');
+            $('.filter').show('1000');
+        }else{
+//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+            $(".filter").not('.'+value).hide('3000');
+            $('.filter').filter('.'+value).show('3000');        
+        }
+    });
+});
