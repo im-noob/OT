@@ -15,3 +15,8 @@ Route::get('/', function () {
     return view('Home/HomeWelcome');
 });
 
+Route::get('/HomeWelcome',function(){
+	return view('Home/HomeWelcome');
+});
+
+Route::get('/searchResult/{searchKey}','Searchable@searchResult');

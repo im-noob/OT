@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
+    'failed' => 'Oops !! This Email Id Not Exists.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];

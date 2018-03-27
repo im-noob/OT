@@ -8,9 +8,18 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" id="form">
                         @csrf
+                        <!-- captcha varification -->
+                        @captcha
 
+
+                        @if ($errors->has('g-recaptcha-response'))
+                            <div align="center" class="alert alert-danger">
+                                <strong> Sorry.. You are looking like bot. if you're not Contact US !!!</strong>   
+                            </div>
+                        @endif
+                        
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -74,4 +83,9 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+       // $('#form').submit();
+    });
+</script>
 @endsection

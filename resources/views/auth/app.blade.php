@@ -63,13 +63,22 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
+
+                            
                         </div>
                     </li>
+
                 @endguest
             </ul>
           </div>
         </nav>
-
+        @if(session()->has('PasswordStatus'))
+            <div align="center" class="alert alert-success">
+                <strong> asse{{Session::get('PasswordStatus')}}</strong>   
+            </div>
+            {{session()->forget('PasswordStatus')}}
+        @endif
+        
         <main class="py-4">
             @yield('content')
         </main>
