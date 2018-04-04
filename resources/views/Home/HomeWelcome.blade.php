@@ -11,7 +11,8 @@
 	  	<!-- user defined:start -->
 	  		<!-- custom css -->
 	  		<link rel="stylesheet" href="{{url('/')}}/css/welcome.css">
-	  		<!-- searching -->
+	  		<!-- OFFLINE -->
+	  		<link rel="stylesheet" href="{{url('/')}}/css/offline-theme-dark-indicator.css" />
 		<!-- user defined:end -->
 		<!-- font -->
 		
@@ -32,7 +33,19 @@
 			<!-- home file -->
 			<script type="text/javascript" src="{{url('/')}}/js/welcome.js"></script>
 			<script type="text/javascript" src="{{url('/')}}/js/searchable.js"></script>
+			<!-- OFLINE -->
+			<script src="{{url('/')}}/js/offline.min.js"></script>
+			<script>
+			var run = function(){
+			  var req = new XMLHttpRequest();
+			  req.timeout = 5000;
+			  req.open('GET', 'http://localhost', true);
+			  req.send();
+			}
 
+			setInterval(run, 3000);
+			</script>
+			
 		<!-- user defined:end -->
 
 		<title>Online Test - Home Welcome Test Series at lowest cost</title>
@@ -53,16 +66,13 @@
 		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item">
+		        <a class="nav-link" href="#">Test</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Blog</a>
+		      </li>
+		      <li class="nav-item">
 		        <a class="nav-link" href="#">About Us</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Press</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Careers</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Sitemap</a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="#">Contact Us</a>
@@ -132,18 +142,18 @@
 
 
 					    <button type="button" class="btn btn-primary filter-button" data-filter="all" >All</button>
-	   				    <button type="button" class="btn btn-primary filter-button" data-filter="railway">Railway</button>
-					    <button type="button" class="btn btn-primary filter-button" data-filter="bank">Bank</button>
+
+	   				    <button type="button" class="btn btn-primary filter-button" data-filter="{{$course_data[0]->Course_name}}">{{$course_data[0]->Course_name}}</button>
+					    <button type="button" class="btn btn-primary filter-button" data-filter="{{$course_data[1]->Course_name}}">{{$course_data[1]->Course_name}}</button>
 
 
 						<div class="btn-group" role="group">
 						    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other</button>
 						    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-						        <button class="dropdown-item filter-button" data-filter="ssc" >SSC</button>
-						        <button class="dropdown-item filter-button" >Test</button>
-						        <button class="dropdown-item filter-button" >Series</button>
-						        <button class="dropdown-item filter-button" >In</button>
-						        <button class="dropdown-item filter-button" >India</button>
+						    	@for($i = 2 ; $i<count($course_data) ; $i++ )
+						    		<button class="dropdown-item filter-button" data-filter="{{$course_data[
+						    		$i]->Course_name}}" >{{$course_data[$i]->Course_name}}</button>
+						    	@endfor
 						    </div>
 						</div>
 					</div>
@@ -151,91 +161,23 @@
 				<br>
 				<!-- filter data -->
 				<div class="row">
-			        <div class="col-md-3 filter ssc">
-			            <div class="each-item">
-			                <img class="port-image" src="{{url('/')}}/image/filter-bg.jpg"/>
-			                <div class="centered">SSC-LDC</div>
-			                <div class="cap1">
-			                    <h3>Car show</h3>
-			                    <p>A car showroom for all verities of cars to display</p>
-			                </div>
-			                <div class="cap2">
-			                    <p class="text-center">Visit</p>
-			                </div>
-			                
-			            </div>
-			            
-			        </div>
-			        
-			        <div class="col-md-3 filter graphic ssc">
-			            <div class="each-item">
-			                <img class="port-image" src="{{url('/')}}/image/filter-bg.jpg"/>
-			                <div class="centered">SSC-CHE</div>
-			                <div class="cap1">
-			                    <h3>Car show</h3>
-			                    <p>A car showroom for all verities of cars to display</p>
-			                </div>
-			                <div class="cap2">
-			                    <p class="text-center">Visit</p>
-			                </div>
-			            </div>
-			        </div>
-			        
-			        <div class="col-md-3 filter railway">
-			            <div class="each-item">
-			                <img class="port-image" src="{{url('/')}}/image/filter-bg.jpg"/>
-			                <div class="centered">RRB</div>
-			                <div class="cap1">
-			                    <h3>Car show</h3>
-			                    <p>A car showroom for all verities of cars to display</p>
-			                </div>
-			                <div class="cap2">
-			                    <p class="text-center">Visit</p>
-			                </div>
-			            </div>
-			        </div>
-			        
-			        <div class="col-md-3 filter graphic ssc">
-			            <div class="each-item">
-			                <img class="port-image" src="{{url('/')}}/image/filter-bg.jpg"/>
-			                <div class="centered">SSC-LLB</div>
-			                <div class="cap1">
-			                    <h3>Car show</h3>
-			                    <p>A car showroom for all verities of cars to display</p>
-			                </div>
-			                <div class="cap2">
-			                    <p class="text-center">Visit</p>
-			                </div>
-			            </div>
-			        </div>
-			        
-			        <div class="col-md-3 filter webdesign bank">
-			            <div class="each-item">
-			                <img class="port-image" src="{{url('/')}}/image/filter-bg.jpg"/>
-			                <div class="centered">Bank PO</div>
-			                <div class="cap1">
-			                    <h3>Car show</h3>
-			                    <p>A car showroom for all verities of cars to display</p>
-			                </div>
-			                <div class="cap2">
-			                    <p class="text-center">Visit</p>
-			                </div>
-			            </div>
-			        </div>
-			        
-			        <div class="col-md-3 filter ssc">
-			            <div class="each-item">
-			                <img class="port-image" src="{{url('/')}}/image/filter-bg.jpg"/>
-			                <div class="centered">SSC-LKG</div>
-			                <div class="cap1">
-			                    <h3>Car show</h3>
-			                    <p>A car showroom for all verities of cars to display</p>
-			                </div>
-			                <div class="cap2">
-			                    <p class="text-center">Visit</p>
-			                </div>
-			            </div>
-			        </div>
+					@foreach($all_data as $data)
+				        <div class="col-md-3 filter {{$data->Course_name}}">
+				            <div class="each-item">
+				                <img class="port-image" src="{{url('/')}}/image/filter-bg.jpg"/>
+				                <div class="centered">{{$data->package_name}}-{{$data->Course_name}}</div>
+				                <div class="cap1">
+				                    <h3>{{$data->package_name}}-{{$data->Course_name}}</h3>
+				                    <p>{{$data->description}}</p>
+				                </div>
+				                <div class="cap2">
+				                    <p class="text-center">Visit</p>
+				                </div>
+				                
+				            </div>
+				            
+				        </div>
+			        @endforeach  
 			    </div>
 			</div>
 			<br>
@@ -284,25 +226,25 @@
 				    <div class="carousel-item active">
 				      <div class="d-block w-100 bg-blue" id="auto-div" alt="First slide"></div>
 				      <div class="carousel-caption">
-				      	<img class="col-sm-6 avtar-dp" src="{{url('/')}}/image/img2.jpg" alt="Second slide">
-					    <h5>We are Back</h5>
-					    <p>Java AP</p>
+				      	<img class="col-sm-6 avtar-dp" src="{{url('/')}}/image/top1.png" alt="Second slide">
+					    <h5>Amrnath Singh</h5>
+					    <p>Thank you OnlineTest.com you make me proud to myself</p>
 					  </div>
 				    </div>
 				    <div class="carousel-item">
 				      <div class="d-block w-100" id="auto-div" alt="First slide"></div>
 				      <div class="carousel-caption">
-				      	<img class="col-sm-6 avtar-dp" src="{{url('/')}}/image/img2.jpg" alt="Second slide">
-					    <h5>>We are Back</h5>
-					    <p>Java AP</p>
+				      	<img class="col-sm-6 avtar-dp" src="{{url('/')}}/image/top1.png" alt="Second slide">
+					    <h5>Amrnath Singh</h5>
+					    <p>Thank you OnlineTest.com you make me proud to myself</p>
 					  </div>
 				    </div>
 				    <div class="carousel-item">
 				      <div class="d-block w-100" id="auto-div"  alt="First slide"></div>
 				      <div class="carousel-caption">
-				      	<img class="col-sm-6 avtar-dp" src="{{url('/')}}/image/img2.jpg" alt="Second slide">
-					    <h5>>We are Back</h5>
-					    <p>Java AP</p>
+				      	<img class="col-sm-6 avtar-dp" src="{{url('/')}}/image/top1.png" alt="Second slide">
+					    <h5>Amrnath Singh</h5>
+					    <p>Thank you OnlineTest.com you make me proud to myself</p>
 					  </div>
 				    </div>
 				  </div>
@@ -348,8 +290,17 @@
 		<!-- overlay:start -->
 		<div class="container-fluid bg-overlay">
 			<div align="center">
-				<h4>Lets Take a Toor</h4>
-		        <button type="button" class="btn btn-primary btn-lg">Get Started</button>
+				<h2>Lets Take a Toor...</h2>
+				<br>
+				<br>
+				<br>
+		        <a href="{{url('/')}}/register"><button type="button" class="btn btn-primary btn-lg">Get Started</button></a>
+		        <BR>
+		        <BR>
+		        <BR>
+		        <br>
+		        <br>
+		        <h1>Start Your Test Now..!!!</h1>
 			</div>
 		</div>
 
@@ -392,11 +343,11 @@
 		    <div class="container">
 		        <div class="row">
 		            <div class="col-md-6 col-sm-6" style="padding:0px">
-                        <a href="https://kb.youth4work.com/tagged/y4w-media" class="fontcolor">About Us</a><span style="color: #e6e6e6">&nbsp;|&nbsp;</span>
-                        <a href="https://kb.youth4work.com/tagged/press" class="fontcolor">Press</a><span style="color: #e6e6e6">&nbsp;|&nbsp;</span>
-                        <a href="https://www.youth4work.com/ContactUs" class="fontcolor">Contact Us</a><span style="color: #e6e6e6">&nbsp;|&nbsp;</span>
-                        <a href="https://www.cos.youth4work.com/youth4work/jobs" class="fontcolor">Careers</a><span style="color: #e6e6e6">&nbsp;|&nbsp;</span>
-                        <a href="https://www.youth4work.com/site_maps" class="fontcolor">Sitemap</a>
+                        <a href="https://kb.youth4work.com/tagged/y4w-media" class="fontcolor">Home</a><span style="color: #e6e6e6">&nbsp;|&nbsp;</span>
+                        <a href="https://kb.youth4work.com/tagged/press" class="fontcolor">Test</a><span style="color: #e6e6e6">&nbsp;|&nbsp;</span>
+                        <a href="https://www.youth4work.com/ContactUs" class="fontcolor">Blog</a><span style="color: #e6e6e6">&nbsp;|&nbsp;</span>
+                        <a href="https://www.cos.youth4work.com/youth4work/jobs" class="fontcolor">Contact Us</a><span style="color: #e6e6e6">&nbsp;|&nbsp;</span>
+                        <a href="https://www.youth4work.com/site_maps" class="fontcolor">About Us</a>
 		            </div>
 		            <div class="col-md-4" >
 		                <p style="text-align:right;">mail : sarkariformbharo121@gmail.com</p>

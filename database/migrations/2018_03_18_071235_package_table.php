@@ -21,6 +21,7 @@ class PackageTable extends Migration
             $table->string('test_Time');
             $table->string('language');
             $table->string('total_question');//Json
+            $table->string('description');
             $table->timestamps();
         });
     }
